@@ -1,8 +1,8 @@
 function checkForEmpty(number) {
-    if(number == 0){
+    if(number === 0){
         return false;
     }
-    if (number == "" || isNaN(number)) {
+    if (isNaN(number)) {
         return true;
     }
 }
@@ -20,7 +20,7 @@ function checkIfOdd(number) {
 
 function checkRemainder(number) {
     
-    if (checkForEmpty(parseFloat(number))) {
+    if (checkForEmpty(+number)) {
         document.getElementById("problemTwoOutput").innerHTML = "";
         return;
     }
@@ -31,8 +31,8 @@ function checkRemainder(number) {
 }
 
 function calculateRectangle() {
-    var width = parseFloat(document.getElementById("sideA").value);
-    var height = parseFloat(document.getElementById("sideB").value);
+    var width = +document.getElementById("sideA").value;
+    var height = +document.getElementById("sideB").value;
     if (checkForEmpty(width) && checkForEmpty(height)) {
         document.getElementById("problemThreeOutput").innerHTML = "";
         return;
